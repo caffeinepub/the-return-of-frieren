@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    --background: 0.145 0.06 295;
+    --foreground: 0.98 0.01 295;
+    --card: 0.18 0.07 295;
+    --card-foreground: 0.98 0.01 295;
+    --popover: 0.18 0.07 295;
+    --popover-foreground: 0.98 0.01 295;
+    --primary: 0.65 0.28 305;
+    --primary-foreground: 0.98 0.01 295;
+    --secondary: 0.22 0.09 295;
+    --secondary-foreground: 0.98 0.01 295;
+    --muted: 0.22 0.09 295;
+    --muted-foreground: 0.72 0.1 295;
+    --accent: 0.7 0.25 320;
+    --accent-foreground: 0.98 0.01 295;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.72 0.1 295 / 30%;
+    --input: 0.72 0.1 295 / 20%;
+    --ring: 0.65 0.28 305;
+    --chart-1: 0.65 0.28 305;
+    --chart-2: 0.7 0.25 320;
+    --chart-3: 0.6 0.22 280;
+    --chart-4: 0.75 0.2 300;
+    --chart-5: 0.55 0.3 310;
+    --sidebar: 0.18 0.07 295;
+    --sidebar-foreground: 0.98 0.01 295;
+    --sidebar-primary: 0.65 0.28 305;
+    --sidebar-primary-foreground: 0.98 0.01 295;
+    --sidebar-accent: 0.22 0.09 295;
+    --sidebar-accent-foreground: 0.98 0.01 295;
+    --sidebar-border: 0.72 0.1 295 / 30%;
+    --sidebar-ring: 0.65 0.28 305;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 10px #c026d3, 0 0 20px #c026d3, 0 0 40px #a855f7;
+}
+
+.butterfly {
+  animation: float 6s ease-in-out infinite;
+}
+.butterfly-delay-2 {
+  animation: float 6s ease-in-out 2s infinite;
+}
+.butterfly-delay-4 {
+  animation: float 6s ease-in-out 4s infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+.section-header {
+  position: relative;
+  display: inline-block;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #c026d3, #a855f7);
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-bg {
+  background-image: url("/assets/frieren-hero.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.navbar-blur {
+  backdrop-filter: blur(12px);
+}
